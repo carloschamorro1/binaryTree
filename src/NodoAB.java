@@ -5,11 +5,6 @@ public class NodoAB {
 
 
 
-    public NodoAB(){
-        hijoIz = null;
-        hijoDe = null;
-        dato = 0;
-    }
 
     public NodoAB(int dato){
         this.dato = dato;
