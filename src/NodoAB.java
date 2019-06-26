@@ -3,9 +3,6 @@ public class NodoAB {
     private NodoAB hijoDe;
     int dato;
 
-
-
-
     public NodoAB(int dato){
         this.dato = dato;
     }

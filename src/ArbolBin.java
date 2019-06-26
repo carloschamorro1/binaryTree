@@ -11,13 +11,17 @@ public class ArbolBin {
         add(5);
         add(3);
         add(11);
+        add(25);
+        add(50);
+        search(15);
     }
 
 
     void add(int dato){
         raiz = addRecursive(raiz,dato);
     }
-    NodoAB addRecursive(NodoAB nodo, int dato){
+
+   private NodoAB addRecursive(NodoAB nodo, int dato){
         if(dato <nodo.getDato()){
             if(nodo.getHijoIz() != null){
                 addRecursive(nodo.getHijoIz(),dato);
@@ -42,14 +46,17 @@ public class ArbolBin {
 
 
     boolean search(int dato){
-        return searchRecursive(raiz,dato);
+        return searchRecursive(this.raiz,dato);
     }
-    boolean searchRecursive (NodoAB nodo,int dato){
-        if(nodo == null)
+    private boolean searchRecursive (NodoAB nodo,int dato){
+        if(nodo == null) {
+            System.out.println("El numero " + dato + " no existe en el arbol");
             return false;
-        if(dato == nodo.dato)
+        }
+        if(dato == nodo.dato) {
+            System.out.println("El numero " + dato + " si existe en el arbol");
             return true;
-        return dato < nodo.dato ? searchRecursive(nodo.getHijoDe(),dato) :
-                searchRecursive(nodo.getHijoIz(), dato);
+        }
+        return dato < nodo.dato ? searchRecursive(nodo.getHijoIz(),dato) : searchRecursive(nodo.getHijoDe(), dato);
     }
 }
